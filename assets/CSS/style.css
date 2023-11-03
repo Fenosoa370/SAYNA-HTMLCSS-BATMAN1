@@ -1,0 +1,433 @@
+ @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+
+@font-face {
+    font-family: 'rajdhani';
+    src: url(../Police/Rajdhani-Medium.ttf);
+}
+
+/*crétion d'une variable root pour configurer les couleurs*/
+
+:root{
+      --yellow-color: #fff000;
+      --yellow-light: #f8f184;
+      --blue-color: #19587D;
+      --white-color: #ffffff;
+      --gradient-white: #eddebf69;
+      --gradient-red: #89000966;
+      --black-color: #000;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/*mise en forme police et taille des titres en h1*/
+h1{
+          font-family: 'rajdhani';
+          font-size: 36px;
+          font-weight: 400;
+
+}
+/* mise en forme police et taille des boutons*/
+button{
+
+    font-family: 'rajdhani';
+    font-size: 20px;
+    font-weight: 400;
+
+}
+/* Construire une classe pour mettre en forme le décalage des bords de la page*/
+.container{
+      width: 80%;
+      margin: 0 auto; /*pour centrer */
+
+}
+
+body{
+
+    background-color: rgb(0, 0, 0);  /*fond en noir*/
+    color: white;   /*couleur du body en blanc*/
+    font-family: 'Space Grotesk'; /*police du texte*/
+    font-weight: 300;
+   
+
+}
+
+
+.up-bar{
+    border-top:#727272 2px solid;
+    position: relative;
+    top: 132px;
+    width: 85%;
+    left: 102px;
+
+}
+
+
+
+
+/*Design de la navigation*/
+
+nav{
+
+    display: flex; /*Décaler vers la droite "home" et le logo */
+    align-items: center; /*centre l'élément de manière verticale*/
+    justify-content: space-between; /* sépare le logo et "home" vers les deux extrêmités*/
+    /*padding-top: 20px; /* por décoller le logo et home de tout en haut*/
+    /*padding-bottom: 20px;/* por décoller le logo et home du texte en bas*/  
+    padding: 30px 0; /* décaler de 30px de partout ; 0: ne pas decaler pour l'horizontal*/
+
+}
+
+/*on cible le ul en tant que sélecteur*/
+ul{
+
+    list-style: none;/* pour retirer le point devant liste dans ul (par exemple celui avent "home") */
+
+}
+/* sur les nav, on cible les ul, et sur les ul, on cible le a*/
+
+/* on va faire une association de sélecteur appelé: combinateur*/
+/* s'il existe d'autres a dans mon fichier, ils ne vont pas prendre la même fonctionnalité*/
+
+/*nav ul li a{
+
+
+}
+*/
+nav ul a{          /* être spécifique en précisant nav et ul, pour évitér de changer les autres a */
+    color: var(--white-color);
+    font-size: 30px; /* pour agrandir la caractère*/
+    font-weight: 500;
+    font-family: 'rajdhani';
+    /*text-decoration: none; /* pour enlever le souligné*/
+
+}
+
+
+/*lorsqu'on glisse le curseur sur les textes dans a, ça devient jaune*/
+nav ul a:hover{
+
+     color: var(--yellow-color);
+
+}
+
+/* Pour l'effet hover lorsqu'on glisse le curseur sur le logo*/
+.logo:hover{
+    color: var(--yellow-color);
+
+    filter: invert(4%) sepia(100%) saturate(6679%) hue-rotate(352deg) brightness(107%) contrast(104%); /*mettre 'filter' sur les images au lieu de couleur*/
+}
+
+/*design de la partie en-tête Hero*/
+/* pour cibler un id: # */
+
+#hero {
+
+    background-image: url(../Illustrations/Bathome1.png);
+    height: 800px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #19587D;
+    background-size: cover;
+}
+
+
+/*classe pour personnaliser la première section de la partie hero*/
+.content{
+
+    display: flex; /*display flex par défaut en row; on doit le mettre en ligne*/
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;/* pour le faire positionner au milieu*/
+    padding-top: 150px;
+}
+
+#hero .titre {
+
+    margin: 20px 0; /*0 pour la droite et la gauche; 20 px: distance entre le texte en haute et le titre*/
+}
+
+.btn{
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 22px;
+    padding: 10px 40px;  /*3 horizontale 20 verticale*/
+    margin-top: 10px;
+    background:linear-gradient(   /*linear gradient pour les boutons en css*/
+         80deg,var(--gradient-white), var(--gradient-red)
+
+    );
+
+    box-shadow: var(--black-color) 5px 5px 60px;
+}
+
+#hero .fleche{
+    display: block;
+    margin: 0 auto;
+    
+    margin-top: 285px;
+}
+
+.scroll {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:fixed;
+    right: 80px;
+    top: 230px;
+}
+
+.scroll .social{
+
+    margin-top: 15px;
+}
+
+/*Design de la section batman personnage*/
+
+#batman-cinema, #justice-league{
+margin-top: 40px;
+
+}
+
+.batman-personnage{
+
+    display: flex;  /* aligner les trois images*/
+    justify-content: space-between; /*espacer les images*/
+}
+
+#batman-cinema .titre, #justice-league .titre {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 30px 0;
+
+}
+
+#nemesis-cinema .titre {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+#allies-cinema .titre {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+
+
+
+
+#batman-cinema .description, #justice-league .description {
+
+    margin-bottom: 40px;
+    text-align: justify;
+    width: 80%;
+    font-size: 21px;
+}
+#nemesis-cinema .description {
+    margin-bottom: 40px;
+    text-align: justify;
+    width: 80%;
+    font-size: 21px;
+}
+#allies-cinema .description {
+    margin-bottom: 40px;
+    text-align: justify;
+    width: 80%;
+    font-size: 21px;
+}
+
+
+
+#batman-cinema .personnage-info{
+
+    text-align: center;
+}
+
+#nemesis-cinema .personnage-info{
+    text-align: center;
+}
+
+#allies-cinema .personnage-info{
+    text-align: center;
+}
+
+
+
+.nemesis-personnage{
+
+    display: flex;  /* aligner les trois images*/
+    justify-content: space-between; /*espacer les images*/
+}
+
+.allies-personnage{
+
+    display: flex;  /* aligner les trois images*/
+    justify-content: space-between; /*espacer les images*/
+}
+
+/*design de la partie multimédia*/
+
+#multimedia button{
+    position: relative;
+    top: 155px;
+    background: none;
+    border: none;
+}
+
+#multimedia button.right{
+    right: -90%;
+}
+
+#multimedia .slider-multimedia{
+    display: flex;
+    width: 60%;
+    margin: 40px auto;
+}
+
+#multimedia .slider-image{
+    width: 100%;
+}
+
+#multimedia .slider-content{
+    padding: 15px;
+    background-color: #81807dd2;
+   /* border-radius: 20px;*/
+   border-top-right-radius: 20px;
+   border-bottom-right-radius: 20px;
+}
+
+#multimedia p{
+    font-size: 14px;
+}
+
+#multimedia .yellow {
+    color: var(--yellow-color);
+}
+
+/*Design de la partie contact-formulaire*/
+
+#contact{
+background-color: darkslategrey;
+padding: 70px 0;
+
+}
+
+#contact .form{
+    width: 50%;
+    margin: 0 auto;
+ 
+}
+
+#contact .h2{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+#contact .titre{
+    display: block;
+    margin: 28px 0;
+}
+
+#contact .form input[type='email'], textarea {
+      display: block;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      width: 80%;
+      border-bottom: 2px solid rgb(191, 194, 198);
+      background-color: transparent;
+      padding: 10px 0;
+      
+}
+#contact .news{
+    margin: 15px 0;
+    border-bottom: 2px solid rgb(191, 194, 198);
+}
+
+#contact .icon img{
+    transform: rotate(90deg);
+    width: 20px;
+}
+
+::placeholder {
+    color: #f8f184;
+    font-size: 15px;
+}
+
+.btn-group{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form input[type='radio']{
+    opacity: 0;
+}
+
+.btn-group label{
+    cursor: pointer;
+    border: 2px solid;
+    padding: 10px;
+    border-image: linear-gradient(
+        69deg,red,blue
+    ) 1;
+    font-size: 20px;
+}
+
+input[type='submit']{
+    display: block;
+    width: 230px;
+    margin: 25px auto;
+    padding: 15px 0;
+    cursor: pointer;
+
+}
+
+#citations{
+    margin: 90px;
+}
+#citations .citation-carte{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#citations .citation-auteur{
+    padding-top: 30px;
+    font-size: 14px;
+    font-family: 'rajdhani';
+}
+
+#citations .guillemet-close {
+    float: right;
+}
+
+/*Design du footer*/
+footer{
+    margin-top: 162px;
+}
+
+footer .text-footer{
+    text-align: center;
+    font-size: 14px;
+}
+
+footer .social-footer{
+    text-align: center;
+    margin: 50px 0;
+}
+
+footer .social-item{
+    padding: 15px;
+}
